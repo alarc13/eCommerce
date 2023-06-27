@@ -2,16 +2,33 @@ import { useContext } from "react";
 import "./CartPage.css";
 import { CartContext } from "../../context/CartContext";
 import { AiOutlineDelete } from "react-icons/ai";
+import Swal from "sweetalert2";
 
 const CartPage = () => {
   const { cart, clearCart, removeById } = useContext(CartContext);
-
+  const LimpiarCarrito = () => {
+    Swal.fire({
+      text: "¿Seguro que quieres limpiar tu carrito de compra?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Confirmar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        clearCart(removeById);
+        Swal.fire({
+          text: "Tu carrito está vacío!",
+        });
+      }
+    });
+  };
   return (
     <div>
       <div>
         <div className="title-carrito">
           <h1>Tu carrito</h1>
-          <button className="clearCart" onClick={clearCart}>
+          <button className="clearCart" onClick={LimpiarCarrito}>
             Limpiar carrito
           </button>
         </div>
