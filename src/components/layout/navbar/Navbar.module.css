@@ -1,0 +1,65 @@
+* {
+  list-style: none;
+  text-decoration: none;
+}
+
+header {
+  margin: 10px 20px;
+  padding: 20px 50px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+img {
+  width: 100px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px;
+}
+.filtros {
+  display: flex;
+}
+.ordenar {
+  display: flex;
+}
+
+.nav li a {
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  display: block;
+  padding: 10px 12px;
+}
+
+.nav li .flecha {
+  font-size: 9px;
+  padding-left: 6px;
+  display: none;
+}
+
+.nav li a:not(:last-child) .flecha {
+  display: inline;
+}
+
+.nav li ul {
+  display: none;
+  position: absolute;
+  min-width: 140px;
+}
+
+.nav li:hover > ul {
+  display: block;
+}
+
+.nav li ul li ul {
+  top: 0;
+}
+.deleteFilters {
+  margin-left: 14px;
+  display: flex;
+  align-items: center;
+  text-decoration: underline;
+  font-weight: 700;
+}

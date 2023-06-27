@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap");
+:root {
+  --fontPrimary: "Montserrat", monospace;
+  --fontSecundary: "Cherry Bomb One", monospace;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--fontPrimary);
+  max-width: 140rem;
+}
+a {
+  color: black;
+}

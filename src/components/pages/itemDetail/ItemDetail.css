@@ -1,0 +1,90 @@
+.container-detail {
+  display: flex;
+  gap: 20px;
+}
+
+.item-img {
+  /* border: 2px solid red; */
+  width: 600px;
+  height: 500px;
+  margin-inline: 50px;
+  overflow: hidden;
+}
+.item-img img {
+  width: 100%;
+}
+.item-title {
+  font-size: 44px;
+  margin-block-end: 10px;
+}
+.item-info p {
+  font-size: 14px;
+  margin-block: 10px;
+}
+.item-size {
+  margin-block-start: 30px;
+}
+.item-size ul {
+  display: flex;
+  margin-block-end: 40px;
+  gap: 20px;
+}
+.item-size ul li {
+  width: 60px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid black;
+  text-align: center;
+}
+.btns-idetail {
+  display: flex;
+  flex-direction: column;
+}
+.btn-detail {
+  all: unset;
+  width: 400px;
+  height: 40px;
+  border: 1px solid black;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn-buy {
+  width: 400px;
+  height: 40px;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid black;
+  color: white;
+  background-color: black;
+  margin-block-start: 10px;
+  letter-spacing: 1px;
+  font-size: 14px;
+  margin-block-end: 20px;
+  cursor: pointer;
+}
+.description-detail {
+  font-size: 16px;
+  font-weight: bold;
+  width: 500px;
+}
+.item-counter {
+  width: 400px;
+  margin-block-start: -20px;
+  margin-block-end: 20px;
+}
+.btn-counter {
+  display: inline;
+  text-align: center;
+  align-content: center;
+  all: unset;
+  border: 1px solid black;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+}
+.count {
+  padding: 10px;
+}

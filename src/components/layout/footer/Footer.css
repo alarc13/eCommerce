@@ -1,0 +1,18 @@
+.footer {
+  margin-block-start: 100px;
+  background-color: black;
+  height: 300px;
+  color: white;
+}
+h1 {
+  font-size: 26px;
+}
+.footer-container {
+  margin-inline: 50px;
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.terms li {
+  padding: 4px;
+}

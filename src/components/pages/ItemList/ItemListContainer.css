@@ -1,0 +1,35 @@
+.cards-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 0.29fr);
+  justify-content: center;
+  column-gap: 20px;
+  row-gap: 50px;
+  padding-inline: 50px;
+  /* border: 3px solid green; */
+}
+.card-img {
+  width: 432px;
+  height: 400px;
+  overflow: hidden;
+  /* border: 3px solid orange; */
+  margin-block-end: 12px;
+}
+.images {
+  width: 100%;
+}
+.cards {
+  height: 100%;
+  flex-wrap: wrap;
+
+  /* border: 3px solid red; */
+}
+.description-card {
+  text-align: center;
+}
+.add-cart {
+  width: 0;
+  position: relative;
+  bottom: 462px;
+  left: 393px;
+}
