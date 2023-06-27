@@ -6,12 +6,14 @@ export const ItemCount = ({ stock, initial = 1, onAdd }) => {
 
   const handleAddToCart = () => {
     onAdd(count);
-    Swal.fire(
-      "Product Added",
-      "The product has been added to the cart.",
-      "success"
-    );
-  }; //prueba
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      html: '<p className="custom-title"> Producto añadido a la cesta</p>',
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
   return (
     <>
       <div className="count--container">
