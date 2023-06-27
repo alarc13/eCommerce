@@ -1,6 +1,6 @@
 import navbar from "./navbar.module.css";
 import { BiSearch } from "react-icons/bi";
-import { BsFillCartCheckFill } from "react-icons/bs";
+import { BsCart } from "react-icons/bs";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
@@ -22,7 +22,7 @@ const Navbar = () => {
 
         <Link to="/carrito">
           <Badge badgeContent={totalItems} showZero color="primary">
-            <BsFillCartCheckFill size="30px" />
+            <BsCart size="24px" />
           </Badge>
         </Link>
       </header>

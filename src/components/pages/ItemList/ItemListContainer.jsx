@@ -1,28 +1,34 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
-
 import { useParams } from "react-router";
-import { products } from "../../../ProductsMock";
+import { db } from "../../../firebaseConfig";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
-
   const { categoryName } = useParams();
 
   useEffect(() => {
-    let productosFiltrados = products.filter(
-      (product) => product.category === categoryName
-    );
+    let itemsCollection = collection(db, "products");
 
-    const tarea = new Promise((resolve) => {
-      resolve(categoryName ? productosFiltrados : products);
-    });
+    let consulta;
 
-    tarea
-      .then((respuesta) => setItems(respuesta))
-      .catch((rechazo) => {
-        console.log(rechazo);
-      });
+    if (categoryName) {
+      consulta = query(itemsCollection, where("category", "==", categoryName));
+    } else {
+      consulta = itemsCollection;
+    }
+    getDocs(consulta)
+      .then((res) => {
+        let products = res.docs.map((elemento) => {
+          return {
+            ...elemento.data(),
+            id: elemento.id,
+          };
+        });
+        setItems(products);
+      })
+      .catch((err) => console.log(err));
   }, [categoryName]);
 
   return <ItemList items={items} />;
