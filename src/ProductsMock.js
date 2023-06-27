@@ -2,7 +2,7 @@ export const products = [
   {
     id: 1,
     title: "Camiseta Liquid Love",
-    price: "€29 EUR",
+    price: 29,
     stock: 2,
     description: "Camiseta oversize color negro Liquid Love.",
     category: "camisetas",
@@ -12,7 +12,7 @@ export const products = [
   {
     id: 2,
     title: "Camiseta Blanca",
-    price: "€29 EUR",
+    price: 29,
     stock: 5,
     description:
       "Camiseta blanca de manga corta. Estampada en serigrafía en el frontal y en la parte trasera.",
@@ -23,7 +23,7 @@ export const products = [
   {
     id: 3,
     title: "Hoodie Faces",
-    price: "€60 EUR",
+    price: 60,
     stock: 0,
     description: "Sudadera con capucha color khaki",
     category: "sudaderas",
@@ -33,7 +33,7 @@ export const products = [
   {
     id: 4,
     title: "iPhone Cases",
-    price: "€10 EUR",
+    price: 10,
     stock: 5,
     description:
       "Carcasas rígidas para iPhone con diferentes diseños. Bordes transparentes.",
@@ -43,7 +43,7 @@ export const products = [
   {
     id: 5,
     title: "Sudadera Azul Marino",
-    price: "€70 EUR",
+    price: 70,
     stock: 10,
     description: "Sudadera con capucha perteneciente a la colección Milagro.",
     category: "sudaderas",
@@ -53,7 +53,7 @@ export const products = [
   {
     id: 6,
     title: "Camiseta Gris",
-    price: "€29 EUR",
+    price: 29,
     stock: 2,
     description: "Camiseta sport grey inspirada en la canción AMG-COCO",
     category: "camisetas",

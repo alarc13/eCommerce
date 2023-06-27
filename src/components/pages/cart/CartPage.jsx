@@ -45,6 +45,7 @@ const CartPage = () => {
           </ul>
         </span>
       </div>
+
       <div className="products-cart">
         {cart.map((product) => {
           return (
@@ -54,7 +55,7 @@ const CartPage = () => {
                   <img className="img-cart" src={product.img} alt="" />
                   <span>
                     <h4>{product.title}</h4>
-                    <h4>{product.price}</h4>
+                    <h4>€{product.price}</h4>
                   </span>
                 </span>
                 <div className="quantity-price">
@@ -67,7 +68,7 @@ const CartPage = () => {
                     ></AiOutlineDelete>
                   </span>
                   <h4 className="price-cart">
-                    <div>{total}</div>
+                    <h4>€{product.price * product.quantity}</h4>
                   </h4>
                 </div>
               </ul>
@@ -75,6 +76,15 @@ const CartPage = () => {
           );
         })}
       </div>
+      <div className="subtotal">
+        <p>subtotal</p>
+        <p>€{total}</p>
+      </div>
+      <span className="taxes">
+        Impuesto incluido. Los gastos de envío se calculan en la pantalla de
+        pagos.
+      </span>
+      <button>Finalizar pedido</button>
     </div>
   );
 };

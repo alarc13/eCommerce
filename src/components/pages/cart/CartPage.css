@@ -53,5 +53,22 @@
 .quantity-price {
   display: flex;
   justify-content: space-between;
-  gap: 285px;
+  gap: 310px;
+}
+.subtotal {
+  display: flex;
+  font-weight: 700;
+  margin-block-start: 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: grey;
+  justify-content: end;
+  margin-inline-end: 50px;
+  gap: 40px;
+}
+.taxes {
+  display: flex;
+  margin-block-start: 20px;
+  margin-inline-end: 50px;
+  justify-content: end;
 }
