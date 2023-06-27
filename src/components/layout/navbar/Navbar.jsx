@@ -1,10 +1,14 @@
 import navbar from "./navbar.module.css";
 import { BiSearch } from "react-icons/bi";
-import { MdOutlineShoppingCart } from "react-icons/md";
-
+import { BsFillCartCheckFill } from "react-icons/bs";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
+import { Badge } from "@mui/material";
 
 const Navbar = () => {
+  const { getTotalItems } = useContext(CartContext);
+  let totalItems = getTotalItems();
   return (
     <>
       <header>
@@ -17,9 +21,9 @@ const Navbar = () => {
         </Link>
 
         <Link to="/carrito">
-          <span size="44">
-            <MdOutlineShoppingCart size="26" />0
-          </span>
+          <Badge badgeContent={totalItems} showZero color="primary">
+            <BsFillCartCheckFill size="30px" />
+          </Badge>
         </Link>
       </header>
       <ul className={navbar.nav}>

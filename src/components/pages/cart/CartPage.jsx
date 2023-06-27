@@ -5,7 +5,10 @@ import { AiOutlineDelete } from "react-icons/ai";
 import Swal from "sweetalert2";
 
 const CartPage = () => {
-  const { cart, clearCart, removeById } = useContext(CartContext);
+  const { cart, clearCart, removeById, getTotalPrice } =
+    useContext(CartContext);
+  let total = getTotalPrice();
+
   const LimpiarCarrito = () => {
     Swal.fire({
       text: "¿Seguro que quieres limpiar tu carrito de compra?",
@@ -63,7 +66,9 @@ const CartPage = () => {
                       onClick={() => removeById(product.id)}
                     ></AiOutlineDelete>
                   </span>
-                  <h4 className="price-cart">{product.price}</h4>
+                  <h4 className="price-cart">
+                    <div>{total}</div>
+                  </h4>
                 </div>
               </ul>
             </div>
