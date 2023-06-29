@@ -17,7 +17,7 @@ const ItemDetail = ({ productSelected, addToCart, cantidad }) => {
       </div>
       <div className="item-info">
         <h2 className="item-title"> {productSelected.title}</h2>
-        <h3 className="item-price">{productSelected.price}</h3>
+        <h3 className="item-price">{productSelected.price} €</h3>
         <p>
           Impuesto incluido. Los gastos de envío se calculan en la pantalla de
           pago.

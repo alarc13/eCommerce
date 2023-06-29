@@ -1,35 +1,41 @@
 import { useContext, useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
-import { products } from "../../../ProductsMock";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import Loader from "../../common/loader/Loader";
+import { db } from "../../../firebaseConfig";
+import { doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [productSelected, setProductSelected] = useState({});
   const [loading, setLoading] = useState(true);
   const { addToCart, getTotalQuantityById } = useContext(CartContext);
-
   const { id } = useParams();
   const cantidad = getTotalQuantityById(id);
-  console.log("la cantidad es: ", cantidad);
 
   useEffect(() => {
+    let detail = true;
     setLoading(true);
 
-    let productFind = products.find((product) => product.id === +id);
-    const getProduct = new Promise((res) => {
-      res(productFind);
-    });
-    getProduct
-      .then((res) => {
-        setProductSelected(res);
-        setLoading(false);
+    const docRef = doc(db, "products", id);
+    getDoc(docRef)
+      .then((docSnap) => {
+        if (detail && docSnap.exists()) {
+          setProductSelected(docSnap.data());
+        } else {
+          console.log("No such document!");
+        }
       })
-      .catch((err) => {
-        console.log(err);
-        setLoading(false);
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        if (detail) setLoading(false);
       });
+
+    return () => {
+      detail = false;
+    };
   }, [id]);
 
   return (
