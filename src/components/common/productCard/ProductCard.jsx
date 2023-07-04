@@ -1,4 +1,4 @@
-import "../../pages/itemList/ItemListContainer.css";
+import "../../pages/ItemList/ItemListContainer.css";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { Link } from "react-router-dom";
 
