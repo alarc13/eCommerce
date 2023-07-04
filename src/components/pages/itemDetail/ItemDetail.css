@@ -88,3 +88,7 @@
 .count {
   padding: 10px;
 }
+.out-of-stock {
+  background-color: rgba(93, 92, 92, 0.324);
+  border: none;
+}

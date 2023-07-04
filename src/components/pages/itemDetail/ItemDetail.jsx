@@ -10,13 +10,16 @@ const ItemDetail = ({ productSelected, addToCart, cantidad }) => {
 
     addToCart(data);
   };
+
+  const isOutOfStock = productSelected.stock < 1; // Check if stock is zero or less
+
   return (
     <section className="container-detail">
       <div className="item-img">
         <img className="images" src={productSelected.img} alt="" />
       </div>
       <div className="item-info">
-        <h2 className="item-title"> {productSelected.title}</h2>
+        <h2 className="item-title">{productSelected.title}</h2>
         <h3 className="item-price">{productSelected.price} €</h3>
         <p>
           Impuesto incluido. Los gastos de envío se calculan en la pantalla de
@@ -34,20 +37,20 @@ const ItemDetail = ({ productSelected, addToCart, cantidad }) => {
           </ul>
         </div>
         <div className="btns-idetail">
-          {productSelected.stock > 0 ? (
+          {isOutOfStock ? (
+            <h3>Sin stock</h3>
+          ) : (
             <ItemCount
               stock={productSelected.stock}
               initial={cantidad}
               onAdd={onAdd}
             />
-          ) : (
-            <h3>No hay stock</h3>
           )}
           <button
-            className="btn-buy"
-            disabled={productSelected.stock < 1 ? true : false}
+            className={`btn-buy ${isOutOfStock ? "out-of-stock" : ""}`}
+            disabled={isOutOfStock}
           >
-            Comprar
+            {isOutOfStock ? "No disponible" : "Comprar"}
           </button>
         </div>
         <p className="description-detail">{productSelected.description}</p>
@@ -56,5 +59,5 @@ const ItemDetail = ({ productSelected, addToCart, cantidad }) => {
     </section>
   );
 };
+
 export default ItemDetail;
-// HACIENDO EL DETATELLE DE PRODUCTO (SIN TERMINAR) clase 7

@@ -14,7 +14,7 @@ const ProductCard = ({ elemento }) => {
 
         <div className="description-card">
           <h4>{elemento.title}</h4>
-          <h4>{elemento.price}</h4>
+          <h4>{elemento.price}€</h4>
         </div>
       </div>
       <div className="add-cart">

@@ -21,7 +21,7 @@ const Navbar = () => {
         </Link>
 
         <Link to="/carrito">
-          <Badge badgeContent={totalItems} showZero color="primary">
+          <Badge badgeContent={totalItems} showZero color="default">
             <BsCart size="24px" />
           </Badge>
         </Link>
