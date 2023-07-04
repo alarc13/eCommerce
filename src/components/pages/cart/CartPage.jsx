@@ -26,7 +26,6 @@ const CartPage = () => {
       }
     });
   };
-  console.log(cart);
   return (
     <div>
       <div>
