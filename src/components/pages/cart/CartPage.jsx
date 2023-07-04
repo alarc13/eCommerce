@@ -26,6 +26,7 @@ const CartPage = () => {
       }
     });
   };
+  console.log(cart);
   return (
     <div>
       <div>
@@ -67,9 +68,9 @@ const CartPage = () => {
                       onClick={() => removeById(product.id)}
                     ></AiOutlineDelete>
                   </span>
-                  <h4 className="price-cart">
+                  <div className="price-cart">
                     <h4>€{product.price * product.quantity}</h4>
-                  </h4>
+                  </div>
                 </div>
               </ul>
             </div>

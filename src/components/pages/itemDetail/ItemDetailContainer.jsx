@@ -21,7 +21,7 @@ const ItemDetailContainer = () => {
     getDoc(docRef)
       .then((docSnap) => {
         if (detail && docSnap.exists()) {
-          setProductSelected(docSnap.data());
+          setProductSelected({ ...docSnap.data(), id: docSnap.id });
         } else {
           console.log("No such document!");
         }
