@@ -1,5 +1,5 @@
 import { SkewLoader } from "react-spinners";
-import "./loader.css";
+import "./Loader.css";
 
 const Loader = () => {
   return (
