@@ -1,4 +1,4 @@
-import navbar from "./navbar.module.css";
+import navbar from "./Navbar.module.css";
 import { BiSearch } from "react-icons/bi";
 import { BsCart } from "react-icons/bs";
 import { useContext } from "react";
