@@ -25,4 +25,3 @@ const ProductCard = ({ elemento }) => {
 };
 
 export default ProductCard;
-//BOTON
