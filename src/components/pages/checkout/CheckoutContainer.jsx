@@ -52,7 +52,8 @@ const CheckoutContainer = () => {
         .required("Este campo es obligatorio"),
       phone: Yup.string()
         .required("Este campo es obligatorio")
-        .min(10, "El telefono no cumple los requisitos"),
+        .min(7, "El telefono no cumple los requisitos"),
+      adress: Yup.string().required("Este campo es obligatorio"),
     }),
   });
 

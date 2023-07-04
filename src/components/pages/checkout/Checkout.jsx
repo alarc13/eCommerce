@@ -1,46 +1,59 @@
 import "./Checkout.css";
-
-import { Button, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 
 const Checkout = ({ handleSubmit, handleChange, errors }) => {
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <TextField
-          label="Name"
-          variant="outlined"
-          name="name"
-          onChange={handleChange}
-          helperText={errors.name}
-          error={errors.name ? true : false}
-        />
-        <TextField
-          label="Email"
-          variant="outlined"
-          name="email"
-          onChange={handleChange}
-          helperText={errors.email}
-          error={errors.email ? true : false}
-        />
-        <TextField
-          label="Adress"
-          variant="outlined"
-          name="adress"
-          onChange={handleChange}
-          helperText={errors.adress}
-          error={errors.adress ? true : false}
-        />
-        <TextField
-          label="Phone"
-          variant="outlined"
-          name="phone"
-          onChange={handleChange}
-          helperText={errors.phone}
-          error={errors.phone ? true : false}
-        />
-        <Button variant="outlined" type="submit">
+    <div className="container-check">
+      <span className="title-check">
+        <h1 className="h1-check">Tramitar pedido</h1>
+        <p className="detail-send">Escribe los detalles de envío</p>
+      </span>
+      <form className="form-check" onSubmit={handleSubmit}>
+        <div className="form-row">
+          <div className="form-column">
+            <TextField
+              className="textfield"
+              label="Name"
+              variant="outlined"
+              name="name"
+              onChange={handleChange}
+              helperText={errors.name}
+              error={errors.name ? true : false}
+            />
+            <TextField
+              className="textfield"
+              label="Adress"
+              variant="outlined"
+              name="adress"
+              onChange={handleChange}
+              helperText={errors.adress}
+              error={errors.adress ? true : false}
+            />
+          </div>
+          <div className="form-column">
+            <TextField
+              className="textfield"
+              label="Email"
+              variant="outlined"
+              name="email"
+              onChange={handleChange}
+              helperText={errors.email}
+              error={errors.email ? true : false}
+            />
+            <TextField
+              className="textfield"
+              label="Phone"
+              variant="outlined"
+              name="phone"
+              onChange={handleChange}
+              helperText={errors.phone}
+              error={errors.phone ? true : false}
+            />
+          </div>
+        </div>
+        <button className="btnBuy-check" type="submit">
           Comprar
-        </Button>
+        </button>
       </form>
     </div>
   );
