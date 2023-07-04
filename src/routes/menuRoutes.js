@@ -1,6 +1,6 @@
 import CartPage from "../components/pages/cart/CartPage";
 import ItemDetailContainer from "../components/pages/itemDetail/ItemDetailContainer";
-import ItemListContainer from "../components/pages/itemList/ItemListContainer";
+import ItemListContainer from "../components/pages/ItemList/ItemListContainer";
 
 export const menuRoutes = [
   {
