@@ -3,6 +3,7 @@ import "./CartPage.css";
 import { CartContext } from "../../context/CartContext";
 import { AiOutlineDelete } from "react-icons/ai";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const CartPage = () => {
   const { cart, clearCart, removeById, getTotalPrice } =
@@ -84,7 +85,9 @@ const CartPage = () => {
         Impuesto incluido. Los gastos de envío se calculan en la pantalla de
         pagos.
       </span>
-      <button>Finalizar pedido</button>
+      <Link to="/checkout">
+        <button className="btn-buy-cart">Finalizar pedido</button>
+      </Link>
     </div>
   );
 };
