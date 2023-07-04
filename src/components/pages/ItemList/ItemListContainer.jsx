@@ -3,9 +3,20 @@ import ItemList from "./ItemList";
 import { useParams } from "react-router";
 import { db } from "../../../firebaseConfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
+import { PropagateLoader } from "react-spinners";
+import "../../common/loader/Loader.css";
+
+const Loader = () => {
+  return (
+    <div className="loader">
+      <PropagateLoader color="black" size={10} />
+    </div>
+  );
+};
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { categoryName } = useParams();
 
   useEffect(() => {
@@ -27,11 +38,15 @@ const ItemListContainer = () => {
           };
         });
         setItems(products);
+        setLoading(false);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+      });
   }, [categoryName]);
 
-  return <ItemList items={items} />;
+  return <>{loading ? <Loader /> : <ItemList items={items} />}</>;
 };
 
 export default ItemListContainer;
