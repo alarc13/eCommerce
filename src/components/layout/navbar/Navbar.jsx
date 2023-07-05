@@ -16,8 +16,10 @@ const Navbar = () => {
           <BiSearch size="24" />
         </span>
         <Link to="/">
-          {" "}
-          <h1>Logo</h1>
+          <img
+            src="https://res.cloudinary.com/dfvc2ttor/image/upload/v1688516018/e-commerce/logo_ffsu5j.png"
+            alt="logo"
+          />
         </Link>
 
         <Link to="/carrito">
