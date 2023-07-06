@@ -53,7 +53,7 @@ const Navbar = () => {
             </ul>
           </li>
           <span className={navbar.deleteFilters}>
-            <Link to="/">Eliminar filtros</Link>
+            <Link to="/">Todos los artículos</Link>
           </span>
         </span>
 
