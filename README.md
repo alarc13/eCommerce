@@ -4,4 +4,4 @@
 
 #
 
-##### Web realizada con React y uso de librerías como Material UI, YUP,React-icons, Formik, React-spinner y uso de base de datos con Firestore de Firebase.
+##### Web realizada con React y uso de librerías como Material UI, YUP,React-icons, Formik, React-spinner y uso de base de datos con Firestore de Firebase. Hay mucho uso de css puro ya que me gusta más realizar las cosas por mi misma y así queda tal cual lo tengo pensado.En cuanto a la parte visual he optado por un diseño algo minimalista y limpio para que el usuario tenga fácil navegación.
